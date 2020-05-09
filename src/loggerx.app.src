@@ -1,0 +1,14 @@
+{application, loggerx,
+ [{description, "loggerx"},
+  {vsn, "0.0.1"},
+  {registered, []},
+  {mod, {loggerx_app, []}},
+  {applications,
+   [kernel,
+    stdlib
+   ]},
+  {env,[]},
+  {modules, []},
+  {licenses, ["Apache 2.0"]},
+  {links, []}
+ ]}.
