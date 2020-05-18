@@ -37,7 +37,7 @@ adding_handler(Config) ->
   C = maps:get(config, Config, #{}),
   C2 = maps:merge(default_config(), C),
   {ok, Pid} = gen_server:start(?MODULE, [C2], []),
-  {ok, Config#{config => Config#{ctrl_pid => Pid}}}.
+  {ok, Config#{config => C2#{ctrl_pid => Pid}}}.
 
 removing_handler(#{config := #{ctrl_pid := Pid}}) ->
   gen_server:stop(Pid).
