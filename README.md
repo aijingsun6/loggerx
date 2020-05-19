@@ -68,3 +68,18 @@ ok
 total:#{error => 20,info => 1}
 gap:#{error => 20,info => 1}
 ```
+#### loggerx_file_h
+用途：文件日志。可以根据字节数，时间间隔，消息数量来滚日志
+配置参数：
+
+| key | type | note |
+| --- | --- | --- |
+| type| `atom` | by_bytes ,by_interval , by_count|
+| file| `string`|  文件名称|
+|modes|`[file:mode()]`| see `logger_std_h.erl`|
+| max_no_bytes| `pos_integer() , infinity` | by_bytes 有效,在不等于infinity的情况下，请保证：max_no_files> 0 |
+| rotate_interval| `pos_integer()` | by_interval 有效, 滚动时间间隔，单位：毫秒，请保证：max_no_files> 0 |
+| max_no_count| `pos_integer()` | by_count 有效, 单文件最大日志数量，请保证：max_no_files> 0 |
+|compress_on_rotate|`boolean()`| see `logger_std_h.erl`|
+|file_check|`non_neg_integer()`| see `logger_std_h.erl`|
+|filesync_repeat_interval|`pos_integer() , no_repeat`| see `logger_std_h.erl`|
